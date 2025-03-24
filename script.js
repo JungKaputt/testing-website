@@ -61,3 +61,41 @@ window.addEventListener("load", () => {
         loader.classList.add("hidden");
     }, 1500);
 });
+
+// Login Function
+function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (username === "admin" && password === "1234") {
+        alert("Login sukses! Selamat datang, " + username);
+
+        document.getElementById('login-container').style.display = 'none';
+        document.getElementById('dashboard').style.display = 'block';
+    } else {
+        document.getElementById('login-status').innerText = "Username atau password salah!";
+    }
+}
+
+//Logout Funtion
+function logout() {
+    document.getElementById('dashboard').style.display = 'none';
+    document.getElementById('login-container').style.display = 'block';
+}
+
+//API Weather Function
+function getWeather() {
+    const city = document.getElementById('city').value;
+    const apiKey = "7d0e8adeb197959c29879548665c91b9"; 
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const weatherInfo = `Suhu di ${city}: ${data.main.temp}°C, ${data.weather[0].description}`;
+            document.getElementById('weather-info').innerText = weatherInfo;
+        })
+        .catch(error => {
+            document.getElementById('weather-info').innerText = "Kota tidak ditemukan!";
+        });
+}
