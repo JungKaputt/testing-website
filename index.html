@@ -44,6 +44,26 @@
         <button type="submit">Kirim</button>
     </form>
 
+    <div id="login-container" class="login-container">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p id="login-status"></p>
+    </div>
+
+    <div id="dashboard" class="dashboard-container" style="display: none">
+        <h1>Selamat Datang di Dasboard, Highhills Project</h1>
+        <p>Website ini sekarang mempunyai sistem login dan fitur cuaca</p>
+
+        <h2>Cek Cuaca</h2>
+        <input type="text" id="city" placeholder="Masukkan Kota">
+        <button onclick="getWeather()">Cek Cuaca</button>
+        <p id="weather-info"></p>
+
+        <button onclick="logout()" class="logout-btn">Logout</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
