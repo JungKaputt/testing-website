@@ -3,6 +3,12 @@ body {
     font-family: 'Arial', sans-serif;
     text-align: center;
     padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: all 0.5s ease-in-out;
 }
 
 h1 {
@@ -298,4 +304,61 @@ font button:hover {
     pointer-events: none;
 }
 
+/* Style Login */
+.login-container, .dashboard-container {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    transition: all 0.5s ease;
+}
 
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+/* Status Login */
+#login-status {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Dashboard Styling */
+.dashboard-container {
+    display: none;
+    width: 400px;
+}
+
+.logout-btn {
+    background: #e74c3c;
+}
+
+.logout-btn:hover {
+    background: #c0392b;
+}
