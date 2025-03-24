@@ -1,0 +1,301 @@
+body {
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    color: #4caf50;
+    font-size: 36px;
+}
+
+p {
+    color: #555;
+    font-size: 36px;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #5a09;
+}
+
+.profil {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #4caf50;
+    margin: 20px 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+nav {
+    background: #4caf50;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/*Gaya halaman portofolio */
+.portofolio-item {
+    border: 1px solid #add;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    background: #f9f9f9;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    color: white;
+    background: #4caf50;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.back-button:hover {
+    background: #45a049;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+form button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+font button:hover {
+    background-color: #45a049;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+.dark-mode nav {
+    background-color: #1e1e1e;
+}
+
+.dark-mode .portofolio-item {
+    background: #1e1e1e;
+    border-color: #444;
+}
+
+.dark-mode .back-button {
+    background: #444;
+}
+
+.parallax {
+    background-image: url('parallax-image.jpg');
+    height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 5px rgba (0, 0, 0, 0.7);
+}
+
+.video {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.contact {
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.contact button {
+    padding : 10px 15px;
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.contact button:hover {
+    background: #45a049;
+}
+
+/* Tampilan di HP */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .parallax {
+        font-size: 1.5rem;
+        height: 250px;
+    }
+
+    .contact {
+        width: 90%;
+    }
+
+    video {
+        width: 100%;
+    }
+}
+
+/* Tampilan di Tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+
+    nav a {
+        margin: 0 10px;
+    }
+
+    .parallax {
+        font-size: 2rem;
+        height: 300px;
+    }
+
+    .contact {
+        width: 70%;
+    }
+
+    video {
+        width: 80%;
+    }
+}
+
+/* Tampilan di PC */
+@media (min-width: 1025px) {
+    body {
+        font-size: 18px;
+    }
+
+    nav a {
+        margin: 0 15px;
+    }
+
+    .parallax {
+        font-size: 2.5rem;
+        height: 400px;
+    }
+
+    .contact {
+        width: 50%;
+    }
+
+    video {
+        width: 640px;
+    }
+}
+
+.scroll-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.7s ease-out;
+}
+
+.scroll-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+#loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
