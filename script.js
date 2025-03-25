@@ -110,3 +110,40 @@ function login () {
         alert("Username atau password salah!")
     }
 }
+
+// Simpan data profile ke local storage
+function saveProfile() {
+    const newUsername = document.getElementById('new-username').value;
+    const fileInput = document.getElementById('upload-pic');
+    const profilePic = document.getElementById('profile-pic');
+
+    if (newUsername) {
+        localStorage.setItem('username', newUsername);
+        document.getElementById('username-display').textContent = `Username: $(newUsername)`;      
+    }
+
+    if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            profilePic.src = e.target.result;
+            localStorage.setItem('profilePic', e.target.result);
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+
+    alert('Profile berhasil diperbarui!');
+}
+
+// Cek kalau ada data tersimpan
+window.onload = function () {
+    const savedUsername = localStorage.getItem('username');
+    const savedProfilePic = localStorage.getItem('profilePic');
+
+    if (savedUsername) {
+        document.getElementById('username-display').textContent = `Username: ${savedUsername}`;
+    }
+
+    if (savedProfilePic) {
+        document.getElementById('profile-pic').src = savedProfilePic;
+    }
+}
