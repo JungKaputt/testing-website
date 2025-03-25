@@ -111,17 +111,18 @@ function login () {
     }
 }
 
-// Simpan data profile ke local storage
 function saveProfile() {
     const newUsername = document.getElementById('new-username').value;
     const fileInput = document.getElementById('upload-pic');
     const profilePic = document.getElementById('profile-pic');
 
-    if (newUsername) {
+    // Cek kalau ada username baru
+    if (newUsername.trim() !== "") {
         localStorage.setItem('username', newUsername);
-        document.getElementById('username-display').textContent = `Username: $(newUsername)`;      
+        document.getElementById('username-display').textContent = `Username: ${newUsername}`;
     }
 
+    // Cek kalau ada file foto baru
     if (fileInput.files && fileInput.files[0]) {
         const reader = new FileReader();
         reader.onload = function (e) {
@@ -131,10 +132,10 @@ function saveProfile() {
         reader.readAsDataURL(fileInput.files[0]);
     }
 
-    alert('Profile berhasil diperbarui!');
+    alert('Profil berhasil diperbarui!');
 }
 
-// Cek kalau ada data tersimpan
+// Cek data yang tersimpan saat halaman dimuat
 window.onload = function () {
     const savedUsername = localStorage.getItem('username');
     const savedProfilePic = localStorage.getItem('profilePic');
@@ -146,4 +147,5 @@ window.onload = function () {
     if (savedProfilePic) {
         document.getElementById('profile-pic').src = savedProfilePic;
     }
-}
+};
+
